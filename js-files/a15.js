@@ -19,6 +19,4 @@ function getArray(array, size) {
 //displays array
 function displayArray(array, size) {
      console.log(array)
-
-
 }
