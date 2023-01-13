@@ -8,3 +8,8 @@ const FilteredArr =  arr.filter((item)=>{
      return item%2==0
 })
 console.log("Filetered array (even)"+FilteredArr)
+
+const addall = arr.reduce((total, item )=>{
+     return total + item
+}, 0)
+console.log( addall)
