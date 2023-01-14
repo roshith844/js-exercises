@@ -1,28 +1,18 @@
-const arr = [];
-let lastElement = 1024;
-let start = 0;
+function binarySearch(arr, target){
 
-let target = 8;
-for (i = 1; i <= lastElement; i++) {
-  arr.push(i);
+     // 1. 2. 3   middle  5, 6, 7 
+     let startIndex = 0;
+     let endIndex = arr.length -1;
+     while(startIndex <= endIndex){
+          let middleIndex = Math.floor(startIndex + (endIndex - startIndex)/2);
+          if(arr[middleIndex] == target){
+               return middleIndex;
+          }else if( target < arr[middleIndex] ){
+       endIndex = middleIndex-1;
+          }else{
+               startIndex = middleIndex +1;
+          }
+     }
+     return -1;
 }
-let end = arr.length - 1;
-
-function binarySearch(arr, start, end, target) {
-    console.log( arr.slice ( start, end ))
-  if (start > end) return false;
-  let midIndex = Math.floor((start + end) / 2);
-
-  if (arr[midIndex] === target) {
-    console.log(arr[midIndex]);
-    return true;
-  }
-
-  if (arr[midIndex] > target) {
-    return binarySearch(arr, start, midIndex - 1, target);
-  } else {
-    return binarySearch(arr, midIndex + 1, end, target);
-  }
-}
-const result = binarySearch(arr, start, end, target);
-console.log(result);
+console.log(binarySearch([1, 2,3,4,6,8,9], 6))
