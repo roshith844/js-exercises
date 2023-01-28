@@ -13,3 +13,4 @@ const addall = arr.reduce((total, item )=>{
      return total + item
 }, 0)
 console.log( addall)
+
