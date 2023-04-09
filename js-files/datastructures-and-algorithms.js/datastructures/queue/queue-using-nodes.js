@@ -16,10 +16,11 @@ class Queue {
         let newNode = new Node(data);
         if (!this.front) {
             this.front = newNode;
+            this.rear = newNode;
         } else {
             this.rear.next = newNode;
+            this.rear = newNode;
         }
-        this.rear = newNode;
         this.size++;
     }
 

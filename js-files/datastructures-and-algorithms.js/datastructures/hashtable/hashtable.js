@@ -30,7 +30,6 @@ class HashTable {
         this.data[index] == undefined
     }
 
-
     display() {
         for (let i = 0; i < this.data.length; i++) {
             if (this.data[i]) {

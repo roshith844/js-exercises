@@ -22,10 +22,10 @@ class Stack {
         if (!this.top) {
             return "Underflow"
         }
-        let poppedNode = this.top
+
         this.top = this.top.next
         this.size--
-        return poppedNode.data
+
     }
 
     peek() {
