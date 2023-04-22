@@ -1,4 +1,4 @@
-// find closest value to a given number in a binary search tree
+// 1. find closest value to a given number in a binary search tree
 
 let input = 5
 
