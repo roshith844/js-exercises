@@ -28,7 +28,7 @@ class BinarySearchTree {
         if (current.left === null) {
           current.left = newNode;
           return this;
-        }
+        } 
         current = current.left;
       } else {
         if (current.right === null) {
@@ -66,10 +66,13 @@ class BinarySearchTree {
 
   remove(value) {
     function removeNode(node, value) {
+
+      // base cases
       if (node === null) {                                                                                                                                                                                                           
         return null;
       }
       if (value === node.value) {
+
         // node has no children
         if (node.left === null && node.right === null) {
           return null;
@@ -79,6 +82,7 @@ class BinarySearchTree {
         if (node.left === null) {
           return node.right;
         }
+
         // node has no right child
         if (node.right === null) {
           return node.left;
@@ -106,35 +110,36 @@ class BinarySearchTree {
     this.root = removeNode(this.root, value);
   }
 
-  traversePreOrder(node = this.root, values = []) {
-    if (node === null) {
-      return values;
+  printInOrder(node) {
+    helper(this.root)
+    function helper(node) {
+        if (node == null) return
+        helper(node.left)
+        console.log(node.value)
+        helper(node.right)
     }
-    values.push(node.value);
-    this.traversePreOrder(node.left, values);
-    this.traversePreOrder(node.right, values);
-    return values;
-  }
+}
+printPreOrder(node) {
+    helper(this.root)
+    function helper(node) {
+        if (node == null) return
+        console.log(node.value)
+        helper(node.left)
+        helper(node.right)
+    }
+}
 
-  traverseInOrder(node = this.root, values = []) {
-    if (node === null) {
-      return values;
+printPostOrder(node) {
+    helper(this.root)
+    function helper(node) {
+        if (node == null) return
+        helper(node.left)
+        helper(node.right)
+        console.log(node.value)
     }
-    this.traverseInOrder(node.left, values);
-    values.push(node.value);
-    this.traverseInOrder(node.right, values);
-    return values;
-  }
+}
 
-  traversePostOrder(node = this.root, values = []) {
-    if (node === null) {
-      return values;
-    }
-    this.traversePostOrder(node.left, values);
-    this.traversePostOrder(node.right, values);
-    values.push(node.value);
-    return values;
-  }
+
 }
 
 // Example usage:
@@ -147,4 +152,7 @@ bst.insert(8);
 bst.insert(4);
 bst.insert(2);
 bst.insert(6)
+
+bst.traverseInOrder
+//    
 

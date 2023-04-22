@@ -74,7 +74,7 @@ class Tree {
       }
     }
 
-    searchHelper(this.root);
+    searchHelper(this.root)
 
     if (parent === null) {
       throw new Error(`Parent node with value ${parentValue} not found`);
@@ -87,7 +87,7 @@ class Tree {
 
     deleteNode(value) {
     let parent = null;
-    let nodeToDelete = null;
+    let nodeToDelete = null; 
 
     // Find the node to delete and its parent
     function searchHelper(node) {
