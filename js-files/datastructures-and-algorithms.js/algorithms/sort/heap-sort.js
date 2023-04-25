@@ -1,18 +1,18 @@
 function heapSort(arr) {
-    buildMaxHeap(arr);
+    buildMaxHeap(arr)
 
     for (let i = arr.length - 1; i > 0; i--) {
         [arr[0], arr[i]] = [arr[i], arr[0]];
         heapify(arr, i, 0);
     }
-
+    // result will not be a heap but a sorted array
     return arr;
 }
 
 function buildMaxHeap(arr) {
     const n = arr.length;
     for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
-        heapify(arr, n, i);
+        heapify(arr, n, i)
     }
 }
 
