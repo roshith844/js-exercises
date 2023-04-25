@@ -1,6 +1,6 @@
 class MaxHeap {
     constructor() {
-      this.heap = [];
+      this.heap = []
     }
   
     insert(val) {
@@ -35,6 +35,7 @@ class MaxHeap {
       if (leftChildIndex < this.heap.length && this.heap[leftChildIndex] > this.heap[maxIndex]) {
         maxIndex = leftChildIndex;
       }
+      
       if (rightChildIndex < this.heap.length && this.heap[rightChildIndex] > this.heap[maxIndex]) {
         maxIndex = rightChildIndex;
       }
