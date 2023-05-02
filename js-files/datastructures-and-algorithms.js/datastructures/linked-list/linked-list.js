@@ -7,7 +7,6 @@ class Node {
 }
 
 const node1 = new Node(100);
-console.log(node1);
 
 class LinkedList {
   constructor() {
@@ -113,6 +112,7 @@ class LinkedList {
       current = current.next;
     }
   }
+
 }
 
 const ll = new LinkedList();
@@ -123,6 +123,13 @@ ll.insertLast(1000);
 ll.insertAt(500, 2);
 ll.removeAt(1);
 ll.clearList();
-console.log(ll);
 ll.printListData();
-// ll.getAt(1)
+
+function arrayToLinkedList(arr) {
+  const ll = new LinkedList();
+  for (let i = 0; i < arr.length; i++) {
+    ll.insertLast(arr[i]);
+  }
+  return ll
+}
+

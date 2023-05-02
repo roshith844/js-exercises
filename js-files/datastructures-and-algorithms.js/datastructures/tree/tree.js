@@ -84,7 +84,6 @@ class Tree {
   }
 
   // delete
-
     deleteNode(value) {
     let parent = null;
     let nodeToDelete = null; 

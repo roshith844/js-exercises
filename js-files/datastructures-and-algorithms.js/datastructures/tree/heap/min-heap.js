@@ -13,7 +13,7 @@ class MinHeap {
   
     delete() {
       if (this.heap.length === 0) return null;
-      const root = this.heap[0];
+      // const root = this.heap[0];
       this.heap[0] = this.heap.pop();
       this._bubbleDown(0);
       // return root;

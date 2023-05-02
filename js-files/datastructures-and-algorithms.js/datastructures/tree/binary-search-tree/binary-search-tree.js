@@ -21,9 +21,9 @@ class BinarySearchTree {
 
     let current = this.root;
     while (true) {
-      if (value === current.value) {
-        return undefined;
-      }
+      // if (value === current.value) {
+      //   return undefined;
+      // }
       if (value < current.value) {
         if (current.left === null) {
           current.left = newNode;
@@ -67,10 +67,10 @@ class BinarySearchTree {
   remove(value) {
     function removeNode(node, value) {
 
-      // base cases
       if (node === null) {                                                                                                                                                                                                           
         return null;
       }
+
       if (value === node.value) {
 
         // node has no children
@@ -89,7 +89,7 @@ class BinarySearchTree {
         }
 
         // node has two children
-        // gets most left value and puts in temp node
+        // gets most left value in right subtree and puts in temp node
         let tempNode = node.right;
         while (tempNode.left !== null) {
           tempNode = tempNode.left;
@@ -110,7 +110,7 @@ class BinarySearchTree {
     this.root = removeNode(this.root, value);
   }
 
-  printInOrder(node) {
+  printInOrder() {
     helper(this.root)
     function helper(node) {
         if (node == null) return
@@ -119,7 +119,8 @@ class BinarySearchTree {
         helper(node.right)
     }
 }
-printPreOrder(node) {
+
+printPreOrder() {
     helper(this.root)
     function helper(node) {
         if (node == null) return
@@ -129,7 +130,7 @@ printPreOrder(node) {
     }
 }
 
-printPostOrder(node) {
+printPostOrder() {
     helper(this.root)
     function helper(node) {
         if (node == null) return
@@ -152,7 +153,8 @@ bst.insert(8);
 bst.insert(4);
 bst.insert(2);
 bst.insert(6)
+bst.remove(8)
 
-bst.traverseInOrder
+bst.traverseInOrder()
 //    
 
