@@ -49,14 +49,11 @@ class Graph {
   bfs(startVertex) {
     const visited = {};
     const queue = [];
-    
     visited[startVertex] = true;
     queue.push(startVertex);
-
     while (queue.length > 0) {
       const vertex = queue.shift();
       console.log(vertex);
-
       const neighbors = this.edges[vertex];
       for (let neighbor of neighbors) {
         if (!visited[neighbor]) {

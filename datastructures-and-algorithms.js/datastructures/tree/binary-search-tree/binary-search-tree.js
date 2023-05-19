@@ -15,11 +15,11 @@ class BinarySearchTree {
     const newNode = new Node(value);
 
     if (this.root === null) {
-      this.root = newNode;
-      return this;
+      this.root = newNode
+      return this
     }
 
-    let current = this.root;
+    let current = this.root
     while (true) {
       // if (value === current.value) {
       //   return undefined;
@@ -71,7 +71,13 @@ class BinarySearchTree {
         return null;
       }
 
-      if (value === node.value) {
+      if (value < node.value) {
+        node.left = removeNode(node.left, value);
+        return node;
+      } else if( value > node.value){
+        node.right = removeNode(node.right, value);
+        return node;
+      }else if (value === node.value) {
 
         // node has no children
         if (node.left === null && node.right === null) {
@@ -98,13 +104,7 @@ class BinarySearchTree {
         node.value = tempNode.value;
         node.right = removeNode(node.right, tempNode.value);
         return node;
-      } else if (value < node.value) {
-        node.left = removeNode(node.left, value);
-        return node;
-      } else {
-        node.right = removeNode(node.right, value);
-        return node;
-      }
+      } 
     }
 
     this.root = removeNode(this.root, value);
@@ -154,7 +154,6 @@ bst.insert(4);
 bst.insert(2);
 bst.insert(6)
 bst.remove(8)
-
 bst.traverseInOrder()
 //    
 

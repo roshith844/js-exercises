@@ -1,18 +1,17 @@
-function binarySearch(arr, target){
-
-     // 1. 2. 3   middle  5, 6, 7 
-     let startIndex = 0;
-     let endIndex = arr.length -1;
-     while(startIndex <= endIndex){
-          let middleIndex = Math.floor(startIndex + (endIndex - startIndex)/2);
-          if(arr[middleIndex] == target){
-               return middleIndex;
-          }else if( target < arr[middleIndex] ){
-       endIndex = middleIndex-1;
-          }else{
-               startIndex = middleIndex +1;
-          }
-     }
-     return -1;
+function binarySearch(array, target) {
+    let start = 0
+    let end = array.length - 1
+    while (start <= end) {
+        let mid = Math.floor((start + end) / 2)
+        if (array[mid] === target) {
+            return mid
+        } else if (target < array[mid]) {
+            end = mid - 1
+        } else {
+            start = mid + 1
+        }
+    }
+    return -1
 }
-console.log(binarySearch([1, 2,3,4,6,8,9], 6))
+
+console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9], 8))

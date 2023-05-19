@@ -12,7 +12,7 @@ class HashTable {
         return hash;
     }
 
-    // Insert key-value pair into hash table
+    // Insert key-value pair into hash table 
     set(key, value) {
         const index = this._hash(key);
         this.data[index] = value

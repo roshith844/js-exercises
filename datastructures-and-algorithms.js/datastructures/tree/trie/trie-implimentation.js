@@ -21,32 +21,52 @@ class Trie {
         }
         current.end = true
     }
-
     search(word) {
+        // take the 1st letter
+        // check it is in root
+        // take second letter 
+        // check its is root.next 
+        // loop till last letter. 
+        //chekck the word end on lastletter's noce
         let current = this.root
-        // loop through the root and check each letter exists with a true value at end
-        // while loop condition: true
-        // if i th word is present, go the the next, else { return false}
-        // if last word check the next node has end true return true 
-        let i = 0
-        while (true) {
+        for (let i = 0; i < word.length; i++) {
             let char = word[i]
-            let lastLetter = word[word.length - 1]
-            if (current.children[char]) {
-                if (char === lastLetter) {
-                    if (current.children[char].end === true) {
-                        return true
-                    } else {
-                        return false
-                    }
-                }
+            if(current.children[char]){
                 current = current.children[char]
-            } else {
+            }else{
                 return false
             }
-            i++
+        }
+        if(current.end === true){
+            return true
         }
     }
+
+    // search(word) {
+    //     let current = this.root
+    //     // loop through the root and check each letter exists with a true value at end
+    //     // while loop condition: true
+    //     // if i th word is present, go the the next, else { return false}
+    //     // if last word check the next node has end true return true 
+    //     let i = 0
+    //     while (true) {
+    //         let char = word[i]
+    //         let lastLetter = word[word.length - 1]
+    //         if (current.children[char]) {
+    //             if (char === lastLetter) {
+    //                 if (current.children[char].end === true) {
+    //                     return true
+    //                 } else {
+    //                     return false
+    //                 }
+    //             }
+    //             current = current.children[char]
+    //         } else {
+    //             return false
+    //         }
+    //         i++
+    //     }
+    // }
 
     autocomplete(prefix) {
         let current = this.root;
